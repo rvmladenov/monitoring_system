@@ -1,0 +1,641 @@
+/* =================================================================================
+Login Pages
+================================================================================= */
+.login-form {
+  max-width: 750px;
+  margin: 0px auto;
+  text-shadow: none;
+  padding-top: 20px;
+}
+.login-form form {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+form img {
+  margin-bottom: 18px;
+}
+form .profile {
+  border-radius: 999px;
+}
+form .top {
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+  padding: 30px 0;
+}
+form .top .icon {
+  width: 100px;
+  height: 100px;
+}
+form .top h1,
+form .top h4 {
+  margin: 0;
+}
+form .top h1 {
+  color: #37363E;
+  font-size: 30px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  margin-top: -14px;
+}
+form .top h4 {
+  font-weight: normal;
+  color: #76757B;
+  font-size: 15px;
+}
+form .form-area {
+  padding: 40px;
+}
+form .form-area .group {
+  position: relative;
+  margin-bottom: 20px;
+}
+form .form-area .form-control {
+  padding-left: 38px;
+  height: 40px;
+}
+form .form-area .fa {
+  position: absolute;
+  top: 11px;
+  left: 13px;
+  font-size: 16px;
+  color: #C3C3C3;
+}
+form .form-area .btn {
+  height: 42px;
+  font-weight: 600;
+}
+form .form-area .checkbox {
+  margin-bottom: 20px;
+}
+/* =================================================================================
+404 - 500 Pages
+================================================================================= */
+.error-pages {
+  text-align: center;
+  padding-top: 100px;
+}
+.error-pages .icon {
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+.error-pages h1 {
+  color: #37363e;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 28px;
+}
+.error-pages h4 {
+  color: #767279;
+  font-weight: normal;
+  font-size: 16px;
+  margin-top: 10px;
+}
+.error-pages form {
+  width: 400px;
+  margin: 0px auto;
+  margin-top: 30px;
+  position: relative;
+}
+.error-pages form .form-control {
+  padding-left: 34px;
+  height: 40px;
+}
+.error-pages form .fa {
+  position: absolute;
+  left: 10px;
+  top: 11px;
+  font-size: 16px;
+}
+.error-pages .bottom-links {
+  margin-top: 30px;
+}
+.error-pages .bottom-links a {
+  margin: 0px 6px;
+}
+/* =================================================================================
+Top Stats
+================================================================================= */
+.topstats {
+  background: #fff;
+  padding: 0;
+  color: #76747A;
+  position: relative;
+  font-size: 12px;
+  border-radius: 3px;
+  margin-left: -5px;
+  margin-right: -5px;
+  text-shadow: none;
+  padding: 12px 0;
+}
+.topstats li {
+  display: block;
+  text-align: center;
+  margin: 10px 0;
+}
+.topstats .title {
+  color: #37363e;
+  font-weight: 600;
+  font-size: 13px;
+}
+.topstats .title .fa {
+  font-size: 15px;
+  color: #000;
+  margin-right: 4px;
+  opacity: 0.4;
+}
+.topstats h3 {
+  font-size: 28px;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: -1px;
+  line-height: normal;
+  margin: 1px 0;
+}
+.topstats h3 small {
+  color: #37363e;
+}
+.topstats .diff b {
+  font-weight: bold;
+}
+.topstats .diff .fa {
+  margin-right: 2px;
+}
+.topstats .arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: -18px;
+  right: 5px;
+  border-style: solid;
+  border-width: 0 10px 10px 10px;
+  border-color: transparent transparent #fff transparent;
+}
+/* Charts */
+.flotchart-container {
+  box-sizing: border-box;
+  width: 100%;
+}
+.flotchart-placeholder {
+  width: 100%;
+  height: 300px;
+  font-size: 13px;
+  line-height: 1.2em;
+}
+.legend table {
+  border-spacing: 5px;
+}
+.easypie {
+  display: inline-block;
+  width: 95px;
+  font-size: 12px;
+  height: 95px;
+  margin: 0 20px 20px 0px;
+  vertical-align: top;
+  position: relative;
+  text-align: center;
+  padding-top: 29px;
+  border-radius: 999px;
+}
+.easypie span {
+  display: block;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+}
+.easypie canvas {
+  position: absolute;
+  left: 0;
+  width: 95px;
+  height: 95px;
+  top: 0;
+}
+.rickshaw-chart {
+  width: 100%;
+}
+/* Demo Css */
+/* Demo sidebar */
+.demo-sidebarmenu .sidebar {
+  position: relative;
+  top: 0;
+  width: 100%;
+}
+.demo-sidebarmenu .sidebar .panel {
+  position: relative;
+}
+/* Calendar */
+.calendar-layout {
+  background: #fff;
+  margin: -20px -30px;
+  margin-bottom: 0;
+  padding: 30px 20px;
+}
+/* =================================================================================
+Awesome Bootstrap Checkbox Rewrite
+================================================================================= */
+.checkbox-primary input[type="checkbox"]:checked + label::before {
+  background-color: #399bff;
+  border-color: #399bff;
+}
+.checkbox-primary input[type="checkbox"]:checked + label::after {
+  color: #fff;
+}
+.checkbox-danger input[type="checkbox"]:checked + label::before {
+  background-color: #ef4836;
+  border-color: #ef4836;
+}
+.checkbox-danger input[type="checkbox"]:checked + label::after {
+  color: #fff;
+}
+.checkbox-info input[type="checkbox"]:checked + label::before {
+  background-color: #51b7a3;
+  border-color: #51b7a3;
+}
+.checkbox-info input[type="checkbox"]:checked + label::after {
+  color: #fff;
+}
+.checkbox-warning input[type="checkbox"]:checked + label::before {
+  background-color: #f39c12;
+  border-color: #f39c12;
+}
+.checkbox-warning input[type="checkbox"]:checked + label::after {
+  color: #fff;
+}
+.checkbox-success input[type="checkbox"]:checked + label::before {
+  background-color: #26a65b;
+  border-color: #26a65b;
+}
+.checkbox-success input[type="checkbox"]:checked + label::after {
+  color: #fff;
+}
+.radio-primary input[type="radio"] + label::after {
+  background-color: #399bff;
+}
+.radio-primary input[type="radio"]:checked + label::before {
+  border-color: #399bff;
+}
+.radio-primary input[type="radio"]:checked + label::after {
+  background-color: #399bff;
+}
+.radio-danger input[type="radio"] + label::after {
+  background-color: #ef4836;
+}
+.radio-danger input[type="radio"]:checked + label::before {
+  border-color: #ef4836;
+}
+.radio-danger input[type="radio"]:checked + label::after {
+  background-color: #ef4836;
+}
+.radio-info input[type="radio"] + label::after {
+  background-color: #51b7a3;
+}
+.radio-info input[type="radio"]:checked + label::before {
+  border-color: #51b7a3;
+}
+.radio-info input[type="radio"]:checked + label::after {
+  background-color: #51b7a3;
+}
+.radio-warning input[type="radio"] + label::after {
+  background-color: #f39c12;
+}
+.radio-warning input[type="radio"]:checked + label::before {
+  border-color: #f39c12;
+}
+.radio-warning input[type="radio"]:checked + label::after {
+  background-color: #f39c12;
+}
+.radio-success input[type="radio"] + label::after {
+  background-color: #26a65b;
+}
+.radio-success input[type="radio"]:checked + label::before {
+  border-color: #26a65b;
+}
+.radio-success input[type="radio"]:checked + label::after {
+  background-color: #26a65b;
+}
+/* =================================================================================
+Bootstrap Rewrite
+================================================================================= */
+a:focus,
+input,
+input[type="file"]:focus,
+input[type="radio"]:focus,
+input[type="checkbox"]:focus,
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
+  outline: 0px;
+}
+/* Typography */
+mark {
+  background: #FBDDAC;
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+code {
+  background: #EDF6FF;
+  padding: 2px 2px;
+  color: #000;
+  border: 1px solid #C3E1FF;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: inherit;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #37363e;
+}
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  letter-spacing: -0.02em;
+}
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+h1,
+.h1 {
+  font-size: 2.25em;
+}
+h2,
+.h2 {
+  font-size: 2em;
+}
+h3,
+.h3 {
+  font-size: 1.75em;
+}
+h4,
+.h4 {
+  font-size: 1.5em;
+}
+h5,
+.h5 {
+  font-size: 1.25em;
+}
+h6,
+.h6 {
+  font-size: 1em;
+}
+.text-st {
+  color: #666;
+}
+.lead {
+  line-height: 1.7em;
+}
+blockquote {
+  background: #f2f2f2;
+  padding: 16px 20px;
+  border-radius: 3px;
+  border-left: 5px solid #ccc;
+}
+blockquote footer,
+blockquote small,
+blockquote .small {
+  display: block;
+  font-size: 80%;
+  line-height: 1.42857143;
+  color: inherit;
+  opacity: 0.6;
+}
+.blockquote-reverse,
+blockquote.pull-right {
+  border-right: 5px solid #ccc;
+}
+dt,
+dd {
+  line-height: inherit;
+}
+.font-title {
+  font-family: 'Montserrat', sans-serif;
+}
+.font-w-300 {
+  font-weight: 300;
+}
+.font-w-400 {
+  font-weight: 400;
+}
+.font-w-600 {
+  font-weight: 600;
+}
+.font-w-700 {
+  font-weight: 700;
+}
+.font-w-800 {
+  font-weight: 800;
+}
+.font-title-tab {
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 12px;
+}
+/* Form Control */
+.form-control {
+  height: 34px;
+  border-radius: 3px;
+  padding-left: 10px;
+  font-size: 14px;
+  background: #fff;
+  border: 1px solid #BDC4C9;
+  display: block;
+  box-shadow: inset 0px 1px 0px #F1F0F1;
+}
+.form-control:focus {
+  background: #f7f7f7;
+  border-color: #BDC4C9;
+  box-shadow: none;
+  border-top: 1px solid #B7B7B7;
+}
+.form-label {
+  font-weight: 500;
+}
+/* Fieldset Form */
+.fieldset-form fieldset {
+  padding: 20px;
+  margin: 0 2px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  padding-top: 10px;
+}
+.fieldset-form legend {
+  width: auto;
+  padding: 0px 10px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  line-height: inherit;
+  color: #333;
+  border: 0;
+  font-weight: 600;
+  border-bottom: none;
+}
+/* Form Control Line */
+.form-control-line {
+  border-left: 0;
+  border-top: 0;
+  border-right: 0;
+  padding-left: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+.form-control-line:focus {
+  border-top: 0;
+  background: none;
+  border-color: #666;
+}
+/* Form Control Radius */
+.form-control-radius {
+  border-radius: 999px;
+}
+/* Form Group */
+.form-group {
+  margin-bottom: 18px;
+}
+/* Form Inline */
+.form-inline label {
+  margin-right: 5px;
+}
+.form-inline .checkbox-inline,
+.form-inline .radio-inline {
+  padding-left: 0;
+  margin-right: 5px;
+}
+.form-inline .checkbox-inline label,
+.form-inline .radio-inline label {
+  padding-left: 5px;
+}
+.form-inline .form-group {
+  padding-right: 10px;
+}
+/* Input Group Addon */
+.input-group-addon {
+  background: #f7f7f7;
+  border-color: #BDC4C9;
+  font-weight: 600;
+  padding-left: 17px;
+  padding-right: 17px;
+}
+/* Input Control Sizing */
+.input-sm {
+  height: 30px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.input-lg {
+  height: 46px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.3333333;
+  border-radius: 3px;
+}
+
+/* Custom */
+.sidebar-systems .success {
+  background-color: #26a65b;
+  color: #fff;
+  min-width: 60px;
+}
+.sidebar-systems .success:hover,
+.sidebar-systems .success:focus,
+.sidebar-systems .success:active {
+    background-color: #2ab764;
+}
+
+.sidebar-systems .error {
+    background-color: #ef4836;
+    color: #fff;
+    min-width: 60px;
+}
+.sidebar-systems .error:hover,
+.sidebar-systems .error:focus,
+.sidebar-systems .error:active {
+    background-color: #f15949;
+    color: #fff;
+}
+
+.sidebar-systems .warning {
+  background-color: #f39c12;
+  color: #fff;
+  min-width: 60px;
+}
+.sidebar-systems .warning:hover,
+.sidebar-systems .warning:focus,
+.sidebar-systems .warning:active {
+    background-color: #f4a425;
+}
+
+.sidebar-systems .system-title {
+    min-width: 90px;
+}
+
+.sidebar-menu {
+  color: #76757B;
+  padding: 10px 5px;
+}
+.sidebar-menu a {
+  color: #76757B;
+}
+.sidebar-menu a:hover {
+  color: #37363e;
+}
+
+.container-fluid {
+  margin-top: 10px;
+}
+
+.tab-content {
+  margin-top: 20px;
+}
+
+#users-list-table td {
+  vertical-align: middle;
+}
+
+.user-pic {
+  text-align: center;
+}
+
+.user-pic > img {
+  max-height: 80px;
+}
+
+.profile-pic {
+    max-width: 209px;
+    margin-top: 40px;
+}
+
+@media (min-width: 768px) {
+    .login-form {
+        max-width: 750px;
+        padding-top: 100px;
+        margin: 0px auto;
+        text-shadow: none;
+    }
+
+    .container-fluid {
+        margin-top: 40px;
+    }
+}
