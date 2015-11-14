@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Система за наблюдение</title>
 
-    <link href="css/root.css" rel="stylesheet" />
+    <link href="/css/root.css" rel="stylesheet" />
 
 </head>
 <body>
