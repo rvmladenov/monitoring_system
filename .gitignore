@@ -1,0 +1,4 @@
+phpinfo.php
+vendor
+/.env
+/composer.lock
