@@ -2,4 +2,4 @@ phpinfo.php
 vendor
 /.env
 /composer.lock
-.idea
+/public/web.config
