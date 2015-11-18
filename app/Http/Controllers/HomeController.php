@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use DB;
 
 class HomeController extends Controller
 {
@@ -16,5 +17,12 @@ class HomeController extends Controller
     public function index()
     {
         return view('home.index');
+    }
+
+    public function testMSSQL()
+    {
+    	// $dbtest = DB::connection();
+    	// dd($dbtest);
+    	return 'Connected to DB';
     }
 }

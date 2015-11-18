@@ -15,3 +15,6 @@ Route::get('/', 'HomeController@index');
 
 Route::get('/admin/', 'Admin\AdministrationController@index');
 Route::get('/admin/profile', 'Admin\ProfileController@index');
+
+
+Route::get('/testsql', 'HomeController@testMSSQL');
