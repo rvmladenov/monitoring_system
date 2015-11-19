@@ -16,10 +16,10 @@ class CreateUsersTable extends Migration
             $table->engine = 'InnoDB';
 
             $table->increments('id')->unsigned();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->string('password', 60);
-            $table->enum('admin', ['a','b']);
+            $table->string('name')->required();
+            $table->string('email')->unique()->required();
+            $table->string('password', 60)->required();
+            $table->enum('admin', ['a','b'])->required();
             $table->rememberToken();
             $table->timestamps(); // Creates 'created_at' and 'updated_at'
         });

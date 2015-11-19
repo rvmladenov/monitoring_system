@@ -18,11 +18,4 @@ class HomeController extends Controller
     {
         return view('home.index');
     }
-
-    public function testMSSQL()
-    {
-    	// $dbtest = DB::connection();
-    	// dd($dbtest);
-    	return 'Connected to DB';
-    }
 }
