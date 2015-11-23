@@ -28,7 +28,7 @@
                     					{{ $system->host }} / {{ $system->dbname }}
                     				</td>
                     				<td>
-                    					<a href="{{url('systems', $system->id)}}" type="button" class="btn btn-info">Виж</a>
+                    					<a href="{{url('admin/systems', $system->id)}}" type="button" class="btn btn-info">Виж</a>
                     					<!-- If ADMIN -->
                     					<button type="button" class="btn btn-warning">Промени</button>
                     					<!-- end -->
