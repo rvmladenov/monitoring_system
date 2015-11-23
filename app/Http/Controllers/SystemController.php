@@ -18,7 +18,8 @@ class SystemController extends Controller
      */
     public function index()
     {
-        // tuk pokazvame vsi4ki sistemi
+        $systems = System::all();
+        return view('/admin/systems', compact('systems'));
     }
 
     /**
@@ -40,7 +41,7 @@ class SystemController extends Controller
     public function store(CreateSystemRequest $request)
     {
         System::create($request->all());
-        return redirect('systems'); // TODO: Add this view
+        return redirect('/admin/systems'); // TODO: Add this view
     }
 
     /**
@@ -50,8 +51,17 @@ class SystemController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
-        //
+    {    
+        //fetch the sytem from db which has the appropriate id
+        //and pass it info as param to the view togethere with all the 
+        //current measurements and statuses of it related records in 
+        //states and measurments tables. 
+        $system = System::find($id);
+        if(is_null($system)){
+            abort(404);
+        }
+        //return $system;
+        return view('/admin/systemShow', compact('system'));
     }
 
     /**

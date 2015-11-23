@@ -16,6 +16,7 @@ class CreateSystemsTable extends Migration
         Schema::create('systems', function (Blueprint $table) {
             $table->engine = 'InnoDB';
 
+            $table->increments('id')->unsigned();
             $table->string('name')->require();
             $table->string('host')->require();
             $table->string('dbname')->require();
