@@ -1,10 +1,6 @@
 @extends('layout.content')
 
 @section('content')
-    <div class="container-fluid">
-
-        @include("admin.layout.left-sidebar")
-
         <div class="col-md-8 col-sm-7 col-lg-9">
             <div class="row">
                 <div class="panel panel-default">
@@ -52,7 +48,6 @@
                 </div>
             </div>
         </div>
-    </div>
 @endsection
 
 @section('footer-scripts')

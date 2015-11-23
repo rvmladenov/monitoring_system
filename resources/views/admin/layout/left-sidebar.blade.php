@@ -9,7 +9,9 @@
                     <li>{!! HTML::linkAction('Admin\AdministrationController@index', 'Администрация') !!}</li>
                 </ul>
             </div>
-            <div class="col-md-4 col-sm-4 col-xs-4 text-right"><i class="fa fa-sign-out"></i><a href="/">Изход</a></div>
+            <div class="col-md-4 col-sm-4 col-xs-4 text-right">
+                <i class="fa fa-sign-out"></i>{!! HTML::link('auth/logout', 'Изход') !!}
+            </div>
         </div>
         <div class="panel panel-primary sidebar-systems">
             <div class="panel-heading">Статуси на Системите</div>
