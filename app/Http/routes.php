@@ -19,5 +19,6 @@ Route::get('/admin/profile', 'Admin\ProfileController@index');
 Route::get('/admin/systems', 'SystemController@index');
 Route::get('/admin/systems/{id}', 'SystemController@show');
 
+Route::get('dynSystems', 'TestController@index');
 
 Route::get('/testsql', 'HomeController@testMSSQL');

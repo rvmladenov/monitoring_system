@@ -52,10 +52,6 @@ class SystemController extends Controller
      */
     public function show($id)
     {    
-        //fetch the sytem from db which has the appropriate id
-        //and pass it info as param to the view togethere with all the 
-        //current measurements and statuses of it related records in 
-        //states and measurments tables. 
         $system = System::find($id);
         if(is_null($system)){
             abort(404);
