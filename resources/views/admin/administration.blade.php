@@ -1,8 +1,6 @@
 @extends('layout.content')
 
 @section('content')
-    <div class="container-fluid">
-    @include("admin.layout.left-sidebar")
 
 <div class="col-md-8 col-sm-7 col-lg-9">
 
@@ -333,7 +331,7 @@
                 </div>
             </div>
         </div>
-    </div>
+
 </div>
 @endsection
         </div>

@@ -13,7 +13,7 @@
 
 Route::get('/', 'HomeController@index');
 
-Route::get('/admin/', 'Admin\AdministrationController@index');
+Route::get('/admin', 'Admin\AdministrationController@index');
 Route::get('/admin/profile', 'Admin\ProfileController@index');
 
 Route::get('/admin/systems', 'SystemController@index');
@@ -21,4 +21,7 @@ Route::get('/admin/systems/{id}', 'SystemController@show');
 
 Route::get('dynSystems', 'TestController@index');
 
-Route::get('/testsql', 'HomeController@testMSSQL');
+Route::controllers([
+    'auth' => 'Auth\AuthController',
+    'password' => 'Auth\PasswordController'
+]);

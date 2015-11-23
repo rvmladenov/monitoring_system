@@ -17,75 +17,75 @@ class ValsTableSeeder extends Seeder
                 'lowerLimit' => 0,
                 'upperLimit' => 2000,
                 'measUnit' => 'mg/Nm3'
-            ], 
+            ],
             [
                 'paramName' => 'SO2',
                 'lowerLimit' => 0,
                 'upperLimit' => 50,
                 'measUnit' => 'kg/30min'
-            ], 
+            ],
             [
                 'paramName' => 'SO3',
                 'lowerLimit' => 0,
                 'upperLimit' => 200,
                 'measUnit' => 'mg/Nm3'
-            ], 
+            ],
             [
                 'paramName' => 'NOx',
                 'lowerLimit' => 0,
                 'upperLimit' => 500,
                 'measUnit' => 'mg/Nm3'
-            ], 
+            ],
             [
                 'paramName' => 'HCL',
                 'lowerLimit' => 0,
                 'upperLimit' => 200,
                 'measUnit' => 'mg/Nm3'
-            ], 
+            ],
             [
                 'paramName' => 'TOC',
                 'lowerLimit' => 0,
                 'upperLimit' => 200,
                 'measUnit' => 'mg/Nm3'
-            ], 
+            ],
             [
-                'paramName' => 'Прах',
+                'paramName' => '????',
                 'lowerLimit' => 0,
                 'upperLimit' => 500,
                 'measUnit' => 'mg/Nm3'
-            ], 
+            ],
             [
                 'paramName' => 'CO',
                 'lowerLimit' => 0,
                 'upperLimit' => 500,
                 'measUnit' => 'mg/Nm3'
-            ], 
+            ],
             [
                 'paramName' => 'O2',
                 'lowerLimit' => 0,
                 'upperLimit' => 25,
-                'measUnit' => 'об.%'
-            ], 
+                'measUnit' => '??.%'
+            ],
             [
-                'paramName' => 'Температура',
+                'paramName' => '???????????',
                 'lowerLimit' => 0,
                 'upperLimit' => 1000,
-                'measUnit' => '°C'
-            ], 
+                'measUnit' => '�C'
+            ],
             [
-                'paramName' => 'Влажност',
+                'paramName' => '????????',
                 'lowerLimit' => 0,
                 'upperLimit' => 2000,
-                'measUnit' => 'об.%'
-            ], 
+                'measUnit' => '??.%'
+            ],
             [
-                'paramName' => 'Налягане',
+                'paramName' => '????????',
                 'lowerLimit' => 0,
                 'upperLimit' => 1100,
                 'measUnit' => 'hPa'
-            ], 
+            ],
             [
-                'paramName' => 'Дебит',
+                'paramName' => '?????',
                 'lowerLimit' => 0,
                 'upperLimit' => 1500000,
                 'measUnit' => 'Nm3/h'
