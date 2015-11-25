@@ -29,6 +29,7 @@
                     <input id="checkbox101" type="checkbox" checked="">
                     <label for="checkbox101"> Запомни ме</label>
                 </div>
+                {{ csrf_field() }}
                 <button type="submit" class="btn btn-info btn-block">ВХОД</button>
             </div>
         </form>
