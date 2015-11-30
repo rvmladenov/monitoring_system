@@ -93,4 +93,10 @@ class SystemController extends Controller
     {
         //
     }
+
+    protected function getSytemIinfo($id){
+        $system = System::find(1);
+        $query = "SELECT [meas].param_id, [meas].time, [meas].value, [param].param_name, [param].param_unit, [limit].ad_limit, [limit].ad_day_limit  FROM [meas] LEFT JOIN [param] on meas.param_id = [param].param_id LEFT JOIN [limit] on meas.param_id = [limit].param_id";
+        
+    }
 }

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CreateSystemRequest;
 use App\System;
 use Illuminate\Http\Request;
-
+use Crypt;
 use PDO;
 
 use App\Http\Requests;
@@ -23,7 +23,7 @@ class TestController extends Controller
 			if($system['host'] == 'WIN-ESA6FH2FC4R\WINCC2K'){
 
 				$port = '1434';
-				$connection = odbc_connect("Driver={SQL Server Native Client 10.0};Server=".$system['host'].",".$port.";Database=".$system['dbname'].";",'cos','web.auto');
+				$connection = odbc_connect("Driver={SQL Server Native Client 10.0};Server=".$system['host'].",".$port.";Database=".$system['dbname'].";",$system['dbuser'],Crypt::decrypt($system['dbuserpass']));
 				$results = odbc_exec($connection, $query);
 				
 				$realData = [];
@@ -40,7 +40,7 @@ class TestController extends Controller
 				odbc_close($connection);
 			} else {
 				try{
-    				$conn = new PDO("sqlsrv:Server=".$system['host'].";Database=".$system['dbname'], 'cos', 'web.auto');
+    				$conn = new PDO("sqlsrv:Server=".$system['host'].";Database=".$system['dbname'], $system['dbuser'], Crypt::decrypt($system['dbuserpass']));
     				$sql = $conn->prepare($query);
 	    			$sql->execute();
 	    			

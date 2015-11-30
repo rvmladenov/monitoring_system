@@ -13,13 +13,13 @@
 
 Route::get('/', 'HomeController@index');
 
-Route::get('/admin', 'Admin\AdministrationController@index');
-Route::get('/admin/profile', 'Admin\ProfileController@index');
+Route::get('/admin', ['middleware'=>'auth', 'uses' => 'Admin\AdministrationController@index']);
+Route::get('/admin/profile', ['middleware'=>'auth', 'uses' =>'Admin\ProfileController@index']);
 
-Route::get('/admin/systems', 'SystemController@index');
-Route::get('/admin/systems/{id}', 'SystemController@show');
+Route::get('/admin/systems', ['middleware'=>'auth', 'uses' =>'SystemController@index']);
+Route::get('/admin/systems/{id}', ['middleware'=>'auth', 'uses' =>'SystemController@show']);
 
-Route::get('dynSystems', 'TestController@index');
+Route::get('dynSystems', ['middleware'=>'auth', 'uses' =>'TestController@index']);
 
 Route::controllers([
     'auth' => 'Auth\AuthController',

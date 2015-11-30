@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-
+//use Crypt;
 class SystemsTableSeeder extends Seeder
 {
     /**
@@ -11,12 +11,32 @@ class SystemsTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('systems')->insert([
-            'name' => 'CPS2',
-            'host' => 'WIN-ESA6FH2FC4RSQLEXPRESS',
-            'dbname' => 'CPS2',
-            'dbuser' => 'cos',
-            'dbuserpass' => bcrypt('web.auto')
-        ]);
+        $systems = [
+            [
+                'name' => 'CPS2',
+                'host' => 'WIN-ESA6FH2FC4R\SQLEXPRESS',
+                'dbversion' => '2008',
+                'dbname' => 'CPS2',
+                'dbuser' => 'cos',
+                'dbuserpass' => Crypt::encrypt('web.auto')
+            ],
+            [
+                'name' => 'CPS',
+                'host' => 'WIN-ESA6FH2FC4R\WINCC',
+                'dbversion' => '2008',
+                'dbname' => 'CPS2',
+                'dbuser' => 'cos',
+                'dbuserpass' => Crypt::encrypt('web.auto')
+            ],
+            [
+                'name' => 'ЦПС 101',
+                'host' => 'WIN-ESA6FH2FC4R\WINCC2K',
+                'dbversion' => '2008',
+                'dbname' => 'lukoil_cps',
+                'dbuser' => 'cos',
+                'dbuserpass' => Crypt::encrypt('web.auto')
+            ]
+        ];
+        DB::table('systems')->insert($systems);
     }
 }

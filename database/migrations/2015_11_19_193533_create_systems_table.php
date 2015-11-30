@@ -19,9 +19,10 @@ class CreateSystemsTable extends Migration
             $table->increments('id')->unsigned();
             $table->string('name')->require();
             $table->string('host')->require();
+            $table->string('dbversion')->require();
             $table->string('dbname')->require();
             $table->string('dbuser')->require();
-            $table->string('dbuserpass', 60)->require();
+            $table->string('dbuserpass')->require();
 
             $table->timestamps(); // Creates 'created_at' and 'updated_at'
         });
