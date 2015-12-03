@@ -21,6 +21,7 @@ class SystemController extends Controller
     public function index()
     {
         $systems = System::all();
+
         return view('/admin/systems', compact('systems'));
     }
 
@@ -102,7 +103,7 @@ class SystemController extends Controller
         $system = System::find($id);
         $queryMeas = "SELECT [meas].param_id, [meas].time, [meas].value, [param].param_name, [param].param_unit, [limit].ad_limit FROM [meas] LEFT JOIN [param] on meas.param_id = [param].param_id LEFT JOIN [limit] on meas.param_id = [limit].param_id";
         $queryEquipment = "";
-        $res;        
+
         if($system['dbversion'] == '2000'){
             $port = '1434';
             $connection = odbc_connect("Driver={SQL Server Native Client 10.0};Server=".$system['host'].",".$port.";Database=".$system['dbname'].";",$system['dbuser'],Crypt::decrypt($system['dbuserpass']));

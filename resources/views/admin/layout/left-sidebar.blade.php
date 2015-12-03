@@ -6,7 +6,7 @@
                 <ul class="dropdown-menu">
                     <li>{!! HTML::linkAction('Admin\AdministrationController@index', 'Начало') !!}</li>
                     <li role="separator" class="divider"></li>
-                    
+
                 </ul>
             </div>
             <div class="col-md-4 col-sm-4 col-xs-4 text-right">
@@ -15,9 +15,9 @@
         </div>
         <div class="panel panel-primary sidebar-systems">
             <div class="panel-heading">Системи</div>
-            <div class="panel-body">            
+            <div class="panel-body">
                 <div class="list-group">
-                    @foreach($systems as $system)                    
+                    @foreach($systems as $system)
                     <a class="list-group-item {{ Request::segment(3) ==  $system->id ? 'active':''}}" href="{{url('admin/systems', $system->id)}}">
                         <label class="btn btn-xs pull-right {{$system['status']}}">
                            {{($system['status'] == 'success') ? 'Ok': (($system['status'] == 'warning') ? 'Внимание!':(($system['status'] == 'error')? 'Грешка!':(($system['status'] == 'default')? 'Няма Връзка!':'')))}}

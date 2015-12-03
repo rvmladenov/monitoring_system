@@ -16,7 +16,7 @@
         <div class="panel-body">
             <div class="tab-content">
                 <div role="tabpanel" class="tab-pane active" id="systems-list" class="panel-body table-responsive">
-                 @include('admin/systems')                    
+                 @include('admin/systems')
                 </div>
                 <div role="tabpanel" class="tab-pane" id="users" class="panel-body table-responsive">
                     <div></div>
@@ -48,10 +48,9 @@
                 </div>
             </div>
         </div>
-
+    </div>
 </div>
 @endsection
-        </div>
 
 @section('footer-scripts')
     <script src="/js/bootstrap/bootstrap.min.js"></script>
@@ -70,7 +69,7 @@
                     "previous": "Назад",
                 }
             };
-            
+
             $('#users-list-table').dataTable({
                 "columnDefs": [{
                     "targets": [0, 5],
