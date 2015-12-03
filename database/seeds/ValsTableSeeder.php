@@ -49,7 +49,7 @@ class ValsTableSeeder extends Seeder
                 'measUnit' => 'mg/Nm3'
             ],
             [
-                'paramName' => '????',
+                'paramName' => 'Прах',
                 'lowerLimit' => 0,
                 'upperLimit' => 500,
                 'measUnit' => 'mg/Nm3'
@@ -64,28 +64,28 @@ class ValsTableSeeder extends Seeder
                 'paramName' => 'O2',
                 'lowerLimit' => 0,
                 'upperLimit' => 25,
-                'measUnit' => '??.%'
+                'measUnit' => 'об.%'
             ],
             [
-                'paramName' => '???????????',
+                'paramName' => 'Температура',
                 'lowerLimit' => 0,
                 'upperLimit' => 1000,
-                'measUnit' => '�C'
+                'measUnit' => '°C'
             ],
             [
-                'paramName' => '????????',
+                'paramName' => 'Влажност',
                 'lowerLimit' => 0,
                 'upperLimit' => 2000,
-                'measUnit' => '??.%'
+                'measUnit' => 'об.%'
             ],
             [
-                'paramName' => '????????',
+                'paramName' => 'Налягане',
                 'lowerLimit' => 0,
                 'upperLimit' => 1100,
                 'measUnit' => 'hPa'
             ],
             [
-                'paramName' => '?????',
+                'paramName' => 'Дебит',
                 'lowerLimit' => 0,
                 'upperLimit' => 1500000,
                 'measUnit' => 'Nm3/h'

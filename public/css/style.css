@@ -626,6 +626,15 @@ dd {
     max-width: 209px;
     margin-top: 40px;
 }
+th.error, td.error{
+  background-color: #ef4836 !important;
+}
+th.warning, td.warning{
+  background-color: #f39c12 !important;
+}
+th.success, td.success {
+  background-color: #26A65B !important;
+}
 
 @media (min-width: 768px) {
     .login-form {

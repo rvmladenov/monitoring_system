@@ -13,23 +13,31 @@ use App\Http\Controllers\Controller;
 
 class TestController extends Controller
 {
+	public static function test($val){					
+		return (is_string($val)) ? iconv('UCS2-LE', 'UTF-8', $val):$val;
+	}
+
     public function index(){
     	//test the dynamic connection with other databases seems successfull
     	$systems = System::all();
     	$res = [];
     	foreach ($systems as $system) {
-    		$query = "SELECT [meas].param_id, [meas].time, [meas].value, [param].param_name, [param].param_unit, [limit].ad_limit, [limit].ad_day_limit  FROM [meas] LEFT JOIN [param] on meas.param_id = [param].param_id LEFT JOIN [limit] on meas.param_id = [limit].param_id";
+    		$query = "SELECT [states].eq_id, [states].time, [states].[state_OK],[states].[state_MaintRQ], [states].[state_InMaint], [states].[state_Fault], [equipment].eq_id, CAST(CAST([equipment].eq_name AS VARBINARY) AS VARCHAR) as eq_name FROM [states] LEFT JOIN [equipment] on states.eq_id = [equipment].eq_id";
 
-			if($system['host'] == 'WIN-ESA6FH2FC4R\WINCC2K'){
+			if($system['dbversion'] == '2000'){
 
 				$port = '1434';
-				$connection = odbc_connect("Driver={SQL Server Native Client 10.0};Server=".$system['host'].",".$port.";Database=".$system['dbname'].";",$system['dbuser'],Crypt::decrypt($system['dbuserpass']));
+				$connection = odbc_connect("Driver={SQL Server Native Client 10.0};Server=".$system['host'].",".$port.";Database=".$system['dbname'],$system['dbuser'],Crypt::decrypt($system['dbuserpass']));
 				$results = odbc_exec($connection, $query);
 				
 				$realData = [];
-				$i=0;
-				
-				while ($row = odbc_fetch_object($results)) {
+				$i=0;				
+				while ($row = json_decode(json_encode(odbc_fetch_object($results)), true)) {
+					foreach ($row as $key=>$item) {	
+						if ($key=="eq_name" && is_string($item)){							
+							$row[$key] = iconv('UCS-2LE', 'UTF-8', $item);
+						}						
+					}					
 					$realData[$i] = $row;
 					$i++;
 				}
@@ -53,4 +61,5 @@ class TestController extends Controller
     	}    
     	return $res;
     }
+   
 }

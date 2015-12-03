@@ -8,6 +8,5 @@
     <title>Система за наблюдение</title>
 
     <link href="/css/root.css" rel="stylesheet" />
-
 </head>
 <body>

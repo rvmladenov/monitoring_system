@@ -21,6 +21,8 @@ Route::get('/admin/systems/{id}', ['middleware'=>'auth', 'uses' =>'SystemControl
 
 Route::get('dynSystems', ['middleware'=>'auth', 'uses' =>'TestController@index']);
 
+Route::get('files', 'FilesController@index');
+
 Route::controllers([
     'auth' => 'Auth\AuthController',
     'password' => 'Auth\PasswordController'

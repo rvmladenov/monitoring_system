@@ -15,10 +15,11 @@ class SystemsTableSeeder extends Seeder
             [
                 'name' => 'CPS2',
                 'host' => 'WIN-ESA6FH2FC4R\SQLEXPRESS',
-                'dbversion' => '2008',
+                'dbversion' => '2005',
                 'dbname' => 'CPS2',
                 'dbuser' => 'cos',
-                'dbuserpass' => Crypt::encrypt('web.auto')
+                'dbuserpass' => Crypt::encrypt('web.auto'),
+                'status' => 'success'
             ],
             [
                 'name' => 'CPS',
@@ -26,15 +27,17 @@ class SystemsTableSeeder extends Seeder
                 'dbversion' => '2008',
                 'dbname' => 'CPS2',
                 'dbuser' => 'cos',
-                'dbuserpass' => Crypt::encrypt('web.auto')
+                'dbuserpass' => Crypt::encrypt('web.auto'),
+                'status' => 'success'
             ],
             [
                 'name' => 'ЦПС 101',
                 'host' => 'WIN-ESA6FH2FC4R\WINCC2K',
-                'dbversion' => '2008',
+                'dbversion' => '2000',
                 'dbname' => 'lukoil_cps',
                 'dbuser' => 'cos',
-                'dbuserpass' => Crypt::encrypt('web.auto')
+                'dbuserpass' => Crypt::encrypt('web.auto'),
+                'status' => 'success'
             ]
         ];
         DB::table('systems')->insert($systems);
