@@ -12,13 +12,18 @@
           </tr>
         </thead>        
         <tbody>
-          @foreach($files as $file)
+        @foreach($directories as $directory)
+        	<tr>            
+            	<td class="text-left" colspan="3"><a href="{{url('files', $directory['path'])}}">{{$directory['name']}}</a></td>            
+         	</tr>
+        @endforeach
+        @foreach($files as $file)
           <tr>            
             <td class="text-left"><a href="{{$file['filePath']}}">{{$file['fileName']}}</a></td>
             <td class="text-right">{{$file['fileSize']}}</td>
             <td class="text-right">{{date('Y-m-d H:i:s', $file['fileDate'])}}</td>
           </tr>
-          @endforeach
+        @endforeach
         </tbody>                          
       </table>
     </div>
@@ -30,6 +35,6 @@
     <script>
         setInterval(function(){
             window.location = window.location;
-        }, 120000);
+        }, 90000);
     </script>
 @endsection

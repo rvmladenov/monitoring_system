@@ -1,12 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use ErrorException;
 use App\Http\Requests\CreateSystemRequest;
 use App\System;
 use Illuminate\Http\Request;
 use Crypt;
 use PDO;
+use PDOException;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -27,36 +28,48 @@ class TestController extends Controller
 			if($system['dbversion'] == '2000'){
 
 				$port = '1434';
-				$connection = odbc_connect("Driver={SQL Server Native Client 10.0};Server=".$system['host'].",".$port.";Database=".$system['dbname'],$system['dbuser'],Crypt::decrypt($system['dbuserpass']));
-				$results = odbc_exec($connection, $query);
-				
-				$realData = [];
-				$i=0;				
-				while ($row = json_decode(json_encode(odbc_fetch_object($results)), true)) {
-					foreach ($row as $key=>$item) {	
-						if ($key=="eq_name" && is_string($item)){							
-							$row[$key] = iconv('UCS-2LE', 'UTF-8', $item);
-						}						
-					}					
-					$realData[$i] = $row;
-					$i++;
+				try {
+					$connection = odbc_connect("Driver={SQL Server Native Client 10.0};Server=".$system['host'].",".$port.";Database=".$system['dbname'],$system['dbuser'],Crypt::decrypt($system['dbuserpass']));
+				} catch (ErrorException $e) {
+					$system->status = 'default';
+					$system->save();
+    				$res[$system['name']] = ['error' => $e];
 				}
+				if($conn){
+					$results = odbc_exec($connection, $query);
+				
+					$realData = [];
+					$i=0;				
+					while ($row = json_decode(json_encode(odbc_fetch_object($results)), true)) {
+						foreach ($row as $key=>$item) {	
+							if ($key=="eq_name" && is_string($item)){							
+								$row[$key] = iconv('UCS-2LE', 'UTF-8', $item);
+							}						
+						}					
+						$realData[$i] = $row;
+						$i++;
+					}
 
-				$res[$system['name']] = $realData;
+					$res[$system['name']] = $realData;
 
-				odbc_free_result($results);
-				odbc_close($connection);
+					odbc_free_result($results);
+					odbc_close($connection);
+				}				
 			} else {
 				try{
     				$conn = new PDO("sqlsrv:Server=".$system['host'].";Database=".$system['dbname'], $system['dbuser'], Crypt::decrypt($system['dbuserpass']));
+    			} catch(PDOException $e){
+    				$system->status = 'default';
+					$system->save();
+	    			$res[$system['name']] = ['error' => $e];
+	    		}
+	    		if($conn){
     				$sql = $conn->prepare($query);
 	    			$sql->execute();
 	    			
 	    			$res[$system['name']] = $sql->fetchAll();
 	    			$conn=null;
-    			} catch(PDOExeption $e){
-	    			return "Error: ".$e;
-	    		}
+    			}
 			}
     	}    
     	return $res;

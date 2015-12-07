@@ -4,3 +4,4 @@ vendor
 /composer.lock
 /public/web.config
 /.idea
+/scheduler.bat

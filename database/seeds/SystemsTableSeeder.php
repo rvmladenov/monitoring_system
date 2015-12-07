@@ -19,6 +19,7 @@ class SystemsTableSeeder extends Seeder
                 'dbname' => 'CPS2',
                 'dbuser' => 'cos',
                 'dbuserpass' => Crypt::encrypt('web.auto'),
+                'systemView' => '127.0.0.1',
                 'status' => 'success'
             ],
             [
@@ -28,6 +29,7 @@ class SystemsTableSeeder extends Seeder
                 'dbname' => 'CPS2',
                 'dbuser' => 'cos',
                 'dbuserpass' => Crypt::encrypt('web.auto'),
+                'systemView' => '127.0.0.1',
                 'status' => 'success'
             ],
             [
@@ -37,6 +39,7 @@ class SystemsTableSeeder extends Seeder
                 'dbname' => 'lukoil_cps',
                 'dbuser' => 'cos',
                 'dbuserpass' => Crypt::encrypt('web.auto'),
+                'systemView' => '127.0.0.1',
                 'status' => 'success'
             ]
         ];
