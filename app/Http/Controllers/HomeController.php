@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\System;
 use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth as AuthFacade;
@@ -20,7 +21,9 @@ class HomeController extends Controller
     {
         if(AuthFacade::check())
         {
-            return view('admin.administration');
+            $systems = System::all();
+
+            return view('admin.administration', compact('systems'));
         }
         return view('home.index');
     }

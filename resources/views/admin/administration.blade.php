@@ -25,10 +25,9 @@
                 @endif
             </div>
         </div>
-
+    </div>
 </div>
 @endsection
-        </div>
 
 @section('footer-scripts')
     <script src="/js/bootstrap/bootstrap.min.js"></script>

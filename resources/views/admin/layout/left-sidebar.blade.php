@@ -3,7 +3,7 @@
             <div class="panel-heading"><a href="{{URL::to('/admin')}}"><h5><i class="glyphicon glyphicon-home"></i> Системи</h5></a></div>
             <div class="panel-body">            
                 <div class="list-group">
-                    @foreach($systems as $system)                    
+                    @foreach($systems as $system)
                     <a class="list-group-item {{ Request::segment(3) ==  $system->id ? 'active':''}}" href="{{url('admin/systems', $system->id)}}">
                         <label class="btn btn-xs pull-right {{$system['status']}}">
                            {{($system['status'] == 'success') ? 'Ok': (($system['status'] == 'warning') ? 'Внимание!':(($system['status'] == 'error')? 'Грешка!':(($system['status'] == 'default')? 'Няма Връзка!':'')))}}
