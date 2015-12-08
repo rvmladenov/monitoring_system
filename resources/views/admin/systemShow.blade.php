@@ -17,7 +17,7 @@
                     @else
                     <div class="row">
                         <div class="col-sm-12">
-                            <button type="button" class="btn btn-lg btn-info">Генериране на справки и доклади</button>
+                            <a href="{{url('admin/systemView', $system->id)}}"role="button" class="btn btn-lg btn-info">Генериране на справки и доклади</a>
                         </div>                        
                     </div>                    
                     <div class="row">

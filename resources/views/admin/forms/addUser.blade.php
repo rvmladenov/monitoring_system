@@ -4,13 +4,13 @@
 <div class="col-md-8 col-sm-7 col-lg-9">
 <h2>Добавяне на Потребител</h2>
 
-{{--@if ($errors->any())
+@if ($errors->any())
     <ul class="alert alert-danger list-unstyled">
         @foreach($errors->all() as $e)
             <li>{!! $e !!}</li>
         @endforeach
     </ul>
-@endif --}}
+@endif
 
 {!! Form::open(array('url' => '/admin/user/store')) !!}
     

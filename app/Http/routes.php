@@ -35,8 +35,8 @@ Route::post('/admin/user/{id}/delete', ['middleware'=>'auth', 'uses' =>'UserCont
 
 Route::get('dynSystems', ['middleware'=>'auth', 'uses' =>'TestController@index']);
 
-Route::get('files', 'FilesController@index');
-Route::get('files/{directory?}', 'FilesController@show');
+Route::get('files', ['middleware'=>'auth', 'uses' =>'FilesController@index']);
+Route::get('files/{directory?}', ['middleware'=>'auth', 'uses' =>'FilesController@show']);
 
 Route::controllers([
     'auth' => 'Auth\AuthController',
