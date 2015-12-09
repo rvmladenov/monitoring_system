@@ -60,5 +60,9 @@
                 format:'d.m.Y'
             });
         });
+        
+        setInterval(function(){
+            window.location = window.location;
+        }, 90000);
     </script>
 @endsection

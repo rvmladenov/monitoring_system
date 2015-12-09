@@ -11,6 +11,6 @@
     <script>
         setInterval(function(){
             window.location = window.location;
-        }, 120000);
+        }, 90000);
     </script>
 @endsection

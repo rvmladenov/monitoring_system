@@ -10,42 +10,19 @@
                 <li role="presentation" class="active">
                     <a href="#systems-list" aria-controls="systems-list" role="tab" data-toggle="tab">Списък на системите</a>
                 </li>
-                <li role="presentation"><a href="#users" aria-controls="users" role="tab" data-toggle="tab">Потребители</a></li>
+                @if(Auth::user()->admin == 'a')<li role="presentation"><a href="#users" aria-controls="users" role="tab" data-toggle="tab">Потребители</a></li>@endif
             </ul>
         </div>
         <div class="panel-body">
             <div class="tab-content">
                 <div role="tabpanel" class="tab-pane active" id="systems-list" class="panel-body table-responsive">
-                 @include('admin/systems')
+                    @include('admin/systems')                    
                 </div>
+                @if(Auth::user()->admin == 'a')
                 <div role="tabpanel" class="tab-pane" id="users" class="panel-body table-responsive">
-                    <div></div>
-                    <table id="users-list-table" class="table display">
-                        <thead>
-                        <tr>
-                            <th></th>
-                            <th>Име</th>
-                            <th>Позиция</th>
-                            <th>Пол</th>
-                            <th>Адрес</th>
-                            <th></th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td class="user-pic"><img src="img/user-thumb.jpg" alt="" /></td>
-                            <td>Иван Петров</td>
-                            <td>Integration Specialist</td>
-                            <td>male</td>
-                            <td>Sofia, Bulgaria</td>
-                            <td>
-                                <a href="#" class="btn btn-sm btn-success"><i class="fa fa-edit"></i></a>
-                                <a href="#" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
+                    @include('admin/users')
                 </div>
+                @endif
             </div>
         </div>
     </div>
@@ -57,25 +34,42 @@
     <script src="/js/datatables/datatables.min.js"></script>
 
     <script>
-        $(document).ready(function() {
-            var langObj = {
-                "info": "Страница _PAGE_ от _PAGES_",
-                "lengthMenu": "Покажи по _MENU_ резултата",
-                "search": "Търси:",
-                "paginate": {
-                    "first": "Начало",
-                    "last": "Край",
-                    "next": "Напред",
-                    "previous": "Назад",
-                }
-            };
-
+        var langObj = {
+            "info": "Страница _PAGE_ от _PAGES_",
+            "lengthMenu": "Покажи по _MENU_ резултата",
+            "search": "Търси:",
+            "paginate": {
+                "first": "Начало",
+                "last": "Край",
+                "next": "Напред",
+                "previous": "Назад",
+            }
+        };        
+    </script>
+    @if(Auth::user()->admin == 'a')
+    <script> 
+        $(document).ready(function() {          
             $('#users-list-table').dataTable({
                 "columnDefs": [{
-                    "targets": [0, 5],
+                    "targets": [2],
                     orderable: false
-                }], "language": langObj
+                }],
+                "language": langObj, 
+                paging: false
             });
-        } );
+        });
+    </script>
+    @endif
+    <script>
+        $(document).ready(function() {          
+            $('#systems-table').dataTable({
+                "columnDefs": [                    
+                    {"searchable":true, orderable: true, "targets": [0,1,2]},
+                    {"searchable":false, orderable: false, "targets": 3}
+                ],
+                "language": langObj,
+                 paging: false
+            });
+        });
     </script>
 @endsection

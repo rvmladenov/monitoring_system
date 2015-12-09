@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\System;
+use App\User;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -17,8 +18,9 @@ class AdministrationController extends Controller
      */
     public function index()
     {
-         $systems = System::all();
-        return view('admin.administration', compact('systems'));
+        $systems = System::all();
+        $users = User::all();
+        return view('admin.administration', compact('systems', 'users'));
     }
 
     /**

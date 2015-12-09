@@ -635,7 +635,10 @@ th.warning, td.warning{
 th.success, td.success {
   background-color: #26A65B !important;
 }
-
+.sidebar-systems .panel-heading h5, .sidebar-systems .panel-heading a{
+  display: inline-block;
+  color: white;
+}
 @media (min-width: 768px) {
     .login-form {
         max-width: 750px;

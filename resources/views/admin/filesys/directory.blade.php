@@ -12,18 +12,21 @@
           </tr>
         </thead>        
         <tbody>
-        @foreach($directories as $directory)
-        	<tr>            
-            	<td class="text-left" colspan="3"><a href="{{url('files', $directory['path'])}}">{{$directory['name']}}</a></td>            
-         	</tr>
-        @endforeach
-        @foreach($files as $file)
+          	<tr>
+          		<td colspan="3"><a href="javascript: void(0);" onclick="window.history.back();" style="display:block;width:100%;">..</a>
+          	</tr>
+          @foreach($directories as $directory)
+           <tr>            
+            <td class="text-left" colspan="3"><a href="{{url('files', $directory['path'])}}" style="display:block;width:100%;">{{$directory['name']}}</a></td>            
+          </tr>
+          @endforeach
+          @foreach($files as $file)
           <tr>            
-            <td class="text-left"><a href="{{$file['filePath']}}">{{$file['fileName']}}</a></td>
+            <td class="text-left"><a href="{{$file['filePath']}}" style="display:block;width:100%;">{{$file['fileName']}}</a></td>
             <td class="text-right">{{$file['fileSize']}}</td>
             <td class="text-right">{{date('Y-m-d H:i:s', $file['fileDate'])}}</td>
           </tr>
-        @endforeach
+          @endforeach
         </tbody>                          
       </table>
     </div>
@@ -35,6 +38,6 @@
     <script>
         setInterval(function(){
             window.location = window.location;
-        }, 90000);
+        }, 120000);
     </script>
 @endsection

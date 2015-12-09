@@ -8,13 +8,18 @@
                     <h3 class="panel-title">Детайли за {{$system->name}}</h3>
                 </div>
                 <div class="panel-body">
+                    @if(array_key_exists('error', $sysData[$system->name]))
+                    <div class="row">                       
+                        <div class="col-sm-12">
+                            <h2>Няма връзка с базата данни</h2>
+                        </div>
+                    </div>
+                    @else
                     <div class="row">
                         <div class="col-sm-12">
-                            <button type="button" class="btn btn-lg btn-info">Генериране на справки и доклади(отваря
-                                iFrame-a)
-                            </button>
+                            <a href="{{url('admin/systemView', $system->id)}}"role="button" class="btn btn-lg btn-info">Генериране на справки и доклади</a>
                         </div>                        
-                    </div>
+                    </div>                    
                     <div class="row">
                         <div class="col-sm-12">
                             <h2>Моментни измервания<br>
@@ -24,7 +29,7 @@
                             <table class="table table-hover">
                                 <thead>
                                 <tr style="font-size:13px;">
-                                @foreach($sysData as $systemData)                                   
+                                @foreach($sysData[$system->name]['meas'] as $systemData)                                   
                                     <td class="text-center" colspan="2"  style="border-right:1px solid #ddd;">
                                     @if (Lang::has('measurments.'.$systemData['param_name']))
                                         {{trans('measurments.'.$systemData['param_name'])}} 
@@ -37,7 +42,7 @@
                                 </thead>
                                 <tbody>
                                 <tr style="font-size:12px;">
-                                @foreach($sysData as $systemData)                                   
+                                @foreach($sysData[$system->name]['meas'] as $systemData)                                   
                                     <td class="{{$systemData['status']}}">{{$systemData['value']}} </td>
                                     <td class="{{$systemData['status']}}" style="border-right:1px solid #ddd;">{{$systemData['ad_limit']}} </td>                                    
                                 @endforeach
@@ -54,31 +59,27 @@
                             </h2>
                             <table class="table table-hover">
                                 <tbody>
+                                @foreach($sysData[$system->name]['equipment'] as $systemDataEq)
                                 <tr>
-                                    <th>Контролер</th>
-                                    <th class="success">OK</th>
-                                    <td class="default">Заявка за поддръжка</td>
-                                    <td class="default">В поддръжка</td>
-                                    <td class="default">Грешка</td>
+
+                                    <th class="col-md-6">{{$systemDataEq['eq_name']}}</th>
+                                    @if(($systemDataEq['state_InMaint'] == 1))
+                                        <td class="col-md-6 warning">В поддръжка</td>
+                                    @elseif(($systemDataEq['state_Fault'] == 1))
+                                        <td class="col-md-6 error">Грешка</td>                                        
+                                    @elseif(($systemDataEq['state_MaintRQ'] == 1))
+                                        <td class="col-md-6 warning">Заявка за поддръжка</td>
+                                    @elseif(($systemDataEq['state_OK'] == 1))    
+                                        <td class="col-md-6 success">OK</td>
+                                    @endif
+
                                 </tr>
-                                <tr>
-                                    <th>Газ-анализаторна система</th>
-                                    <th class="success">OK</th>
-                                    <td class="default">Заявка за поддръжка</td>
-                                    <td class="default">В поддръжка</td>
-                                    <td class="default">Грешка</td>
-                                </tr>
-                                <tr>
-                                    <th>Прахомер</th>
-                                    <th class="success">OK</th>
-                                    <td class="default">Заявка за поддръжка</td>
-                                    <td class="default">В поддръжка</td>
-                                    <td class="default">Грешка</td>
-                                </tr>
+                                @endforeach                                
                                 </tbody>
                             </table>
                         </div>
                     </div>
+                    @endif
                 </div>
             </div>
         </div>
@@ -90,6 +91,6 @@
     <script>
         setInterval(function(){
             window.location = window.location;
-        }, 120000);
+        }, 90000);
     </script>
 @endsection

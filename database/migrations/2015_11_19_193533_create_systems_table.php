@@ -23,6 +23,7 @@ class CreateSystemsTable extends Migration
             $table->string('dbname')->require();
             $table->string('dbuser')->require();
             $table->string('dbuserpass')->require();
+            $table->string('systemView')->require();
             $table->enum('status', ['success','warning','error','default'])->required();
             $table->timestamps(); // Creates 'created_at' and 'updated_at'
         });
